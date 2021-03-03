@@ -1,11 +1,31 @@
 package com.example.blogforum.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AccessTokenDTO {
+    private Integer id;
     private String client_id;
-    private String client_secret;
-    private String code;
+    private String client_Secret;
     private String redirect_uri;
+    private String code;
     private String state;
+
+    public String getClient_Secret() {
+        return client_Secret;
+    }
+
+    public void setClient_Secret(String client_Secret) {
+        this.client_Secret = client_Secret;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getClient_id() {
         return client_id;
@@ -15,12 +35,12 @@ public class AccessTokenDTO {
         this.client_id = client_id;
     }
 
-    public String getClient_secret() {
-        return client_secret;
+    public String getRedirect_uri() {
+        return redirect_uri;
     }
 
-    public void setClient_secret(String client_secret) {
-        this.client_secret = client_secret;
+    public void setRedirect_uri(String redirect_uri) {
+        this.redirect_uri = redirect_uri;
     }
 
     public String getCode() {
@@ -29,14 +49,6 @@ public class AccessTokenDTO {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public String getRedirect_uri() {
-        return redirect_uri;
-    }
-
-    public void setRedirect_uri(String redirect_uri) {
-        this.redirect_uri = redirect_uri;
     }
 
     public String getState() {
