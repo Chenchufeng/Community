@@ -1,0 +1,22 @@
+github:
+  client:
+    id: 6efa0c9edf5b747a0e654a5b895e0c3fd2cffb6fe448f000e377eac4f249b3da
+    secret: 8ae21a5f3b9fad7388f042f6187eae2d1d4d4f2f3e6542ef7304e8cc5c758ef9
+  redirect:
+    uri: http://localhost:8080/callback
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/blog-forum?useSSl=true&charaterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+#整合mybatis
+mybatis:
+  #标注mybatis配置文件的位置
+#    config-location: classpath:mybatis-config.xml
+  #标注待解析的mapper的xml文件位置
+  mapper-locations: classpath:mapping/*.xml
+  #标注实体类位置
+  type-aliases-package: com.example.blog.entity

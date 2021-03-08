@@ -1,4 +1,4 @@
-package com.example.blogforum.dto;
+package com.example.blog.dto;
 
 import org.springframework.stereotype.Component;
 

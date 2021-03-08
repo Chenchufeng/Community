@@ -1,8 +1,8 @@
-package com.example.blogforum.provider;
+package com.example.blog.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.example.blogforum.dto.AccessTokenDTO;
-import com.example.blogforum.model.User;
+import com.example.blog.dto.AccessTokenDTO;
+import com.example.blog.dto.GithubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +34,7 @@ public class GithubProvider {
     }
 
     //根据token获取用户信息
-    public User getUserByToken(String Token){
+    public GithubUser getUserByToken(String Token){
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url("https://gitee.com/api/v5/user?access_token="+Token)
@@ -42,8 +42,8 @@ public class GithubProvider {
         try {
             Response response = client.newCall(request).execute();
             String str = response.body().string();
-            User user = JSON.parseObject(str, User.class);
-            return user;
+            GithubUser githubUser = JSON.parseObject(str, GithubUser.class);
+            return githubUser;
         } catch (IOException e) {
             e.printStackTrace();
         }
