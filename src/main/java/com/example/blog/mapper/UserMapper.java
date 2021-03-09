@@ -2,6 +2,7 @@ package com.example.blog.mapper;
 
 import com.example.blog.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,5 +13,8 @@ import org.springframework.stereotype.Repository;
 
 @Mapper
 public interface UserMapper {
+
     void addUser(User user);
+
+    User findByToken(@Param("token") String token);
 }
