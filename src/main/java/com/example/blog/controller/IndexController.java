@@ -16,7 +16,12 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request){
+
         Cookie[] cookies = request.getCookies();
+        if(cookies==null){
+            System.out.println("cookie是空的，需要登录！");
+            return "index";
+        }
         for (Cookie cookie : cookies) {
             if(cookie.getName().equals("token")){
                 String token = cookie.getValue();

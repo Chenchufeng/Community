@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 github:
   client:
     id: 6efa0c9edf5b747a0e654a5b895e0c3fd2cffb6fe448f000e377eac4f249b3da
